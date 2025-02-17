@@ -3,7 +3,7 @@ import {iTask} from '../../interfaces/iTask';
 import {Card,CardContent,CardActionArea,Typography, Box   } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useRouter } from "next/router";
-import { K_APP_PATH, K_PAGES_TASKS_PATH } from '@/utils/settings';
+import { K_APP_PATH, K_PAGES_TASKS_PATH } from '../../utils/settings';
 interface Props{
     items:iTask[];
 }
