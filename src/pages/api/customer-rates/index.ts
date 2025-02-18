@@ -23,7 +23,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                     return res.status(400).json({ message: "Invalid input data" });
                 }
 
-                const query = 'INSERT INTO customerRate(idCustomer, idRate, factor) VALUES ($1, $2, $3) RETURNING *';
+                const query = 'INSERT INTO customerRate (idCustomer, idRate, factor) VALUES ($1, $2, $3) RETURNING *';
                 const values = [idCustomer, idRate, factor];
                 const response = await cnn.query(query, values);
                 return res.status(200).json(response.rows[0]);

@@ -1,7 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react';
-import { K_API_PATH, K_APP_PATH, K_PAGES_TASKS_PATH } from '../../utils/settings'; // Ajusta las rutas si es necesario
+import { K_API_PATH, K_APP_PATH, K_PAGES_CUSTOMERS_PATH, K_PAGES_TASKS_PATH } from '../../utils/settings'; // Ajusta las rutas si es necesario
 import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useRouter } from "next/router";
@@ -34,10 +33,10 @@ export default function NewCustomer() { // Nombre del componente cambiado a NewC
     };
 
     const [customer, setCustomer] = useState<iCustomer>({ // Tipado del state con la interfaz iCustomer
-        customerName: '',
+        customername: '',
         zone: '',
-        contactName: '',
-        contactPhone: ''
+        contactname: '',
+        contactphone: ''
     });
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -48,7 +47,7 @@ export default function NewCustomer() { // Nombre del componente cambiado a NewC
             } else {
                 await createCustomer(customer); // Llama a la función correcta
             }
-            router.push(`${K_APP_PATH}`);
+            router.push(`${K_PAGES_CUSTOMERS_PATH}`);
         } catch (error) {
             console.error(error); // Usa console.error para mostrar errores
         }
@@ -89,10 +88,10 @@ export default function NewCustomer() { // Nombre del componente cambiado a NewC
         const res = await fetch(`${K_API_PATH}/customers/${id}`); // Ruta correcta para customers
         const customer = await res.json();
         setCustomer({
-            customerName: customer.customerName,
+            customername: customer.customername,
             zone: customer.zone,
-            contactName: customer.contactName,
-            contactPhone: customer.contactPhone
+            contactname: customer.contactname,
+            contactphone: customer.contactphone
         });
     };
 
@@ -113,12 +112,12 @@ export default function NewCustomer() { // Nombre del componente cambiado a NewC
                 <div>
                     <TextField
                         required
-                        name="customerName" // Nombre del campo ajustado
+                        name="customername" // Nombre del campo ajustado
                         label="Customer Name" // Etiqueta ajustada
                         placeholder="Customer Name" // Placeholder ajustado
                         margin="normal"
                         onChange={handleChange}
-                        value={customer.customerName} // Valor del campo ajustado
+                        value={customer.customername} // Valor del campo ajustado
                     />
 
                 </div>
@@ -136,23 +135,23 @@ export default function NewCustomer() { // Nombre del componente cambiado a NewC
 
                 <div>
                     <TextField
-                        name="contactName" // Nombre del campo ajustado
+                        name="contactname" // Nombre del campo ajustado
                         label="Contact Name" // Etiqueta ajustada
                         placeholder="Contact Name" // Placeholder ajustado
                         margin="normal"
                         onChange={handleChange}
-                        value={customer.contactName} // Valor del campo ajustado
+                        value={customer.contactname} // Valor del campo ajustado
                     />
                 </div>
 
                 <div>
                     <TextField
-                        name="contactPhone" // Nombre del campo ajustado
+                        name="contactphone" // Nombre del campo ajustado
                         label="Contact Phone" // Etiqueta ajustada
                         placeholder="Contact Phone" // Placeholder ajustado
                         margin="normal"
                         onChange={handleChange}
-                        value={customer.contactPhone} // Valor del campo ajustado
+                        value={customer.contactphone} // Valor del campo ajustado
                     />
                 </div>
 

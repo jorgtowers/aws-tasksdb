@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react';
-import { K_API_PATH, K_APP_PATH, K_PAGES_TASKS_PATH } from '../../utils/settings'; // Ajusta las rutas si es necesario
+import { K_API_PATH, K_APP_PATH, K_PAGES_RATES_PATH, K_PAGES_TASKS_PATH } from '../../utils/settings'; // Ajusta las rutas si es necesario
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 import Box from '@mui/material/Box';
@@ -47,7 +47,7 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
             } else {
                 await createRate(rate); // Llama a la función correcta
             }
-            router.push(`${K_APP_PATH}`);
+            router.push(`${K_PAGES_RATES_PATH}`);
         } catch (error) {
             console.error(error); // Usa console.error para mostrar errores
         }

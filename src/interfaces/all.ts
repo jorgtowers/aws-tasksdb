@@ -17,10 +17,10 @@ export interface iRate {
 // interfaces/iCustomer.ts
 export interface iCustomer {
     id?: string;
-    customerName: string;
+    customername: string;
     zone: string;
-    contactName: string;
-    contactPhone: string;
+    contactname: string;
+    contactphone: string;
 }
 
 // interfaces/iCustomerRate.ts

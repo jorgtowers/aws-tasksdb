@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     switch (method) {
         case "GET":
             try {
-                const query = 'SELECT * FROM customer WHERE id=$1';
+                const query = 'SELECT * FROM customers WHERE id=$1';
                 const values = [id];
                 const result = await cnn.query(query, values);
                 if (!result.rows.some(() => true))
@@ -17,10 +17,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             }
         case "PUT":
             try {
-                const { customerName, zone, contactName, contactPhone } = body;
+                const { customername, zone, contactname, contactphone } = body;
                 const text =
-                    "UPDATE customer SET customerName = $1, zone = $2, contactName = $3, contactPhone = $4 WHERE id = $5 RETURNING *";
-                const values = [customerName, zone, contactName, contactPhone, id];
+                    "UPDATE customers SET customername = $1, zone = $2, contactname = $3, contactphone = $4 WHERE id = $5 RETURNING *";
+                const values = [customername, zone, contactname, contactphone, id];
                 const result = await cnn.query(text, values);
                 return res.json(result.rows.at());
             } catch (error: any) {
@@ -28,7 +28,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             }
         case "DELETE":
             try {
-                const text = "DELETE FROM customer WHERE id = $1 RETURNING *";
+                const text = "DELETE FROM customers WHERE id = $1 RETURNING *";
                 const values = [id];
                 const result = await cnn.query(text, values);
 
