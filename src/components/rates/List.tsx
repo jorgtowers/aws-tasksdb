@@ -45,12 +45,12 @@ export function RateList({ items }: Props) {
                             }}>
                             <CardContent sx={{ height: '100%' }}>
                                 <Typography variant="h5" component="div">
-                                    {item.Description}
+                                    {item.description}
                                 </Typography>
                                 <Typography variant="body2" color="text.secondary">
-                                    {item.Vigency}
+                                    {item.vigency}
                                     <br />
-                                    {item.Amount}
+                                    {item.amount}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>

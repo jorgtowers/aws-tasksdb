@@ -13,7 +13,6 @@ interface Props {
 
 export default function RatesIndex({ rates }: Props) {
     const router = useRouter();
-
     return <>
         <Navbar />
         {rates.length === 0 ?

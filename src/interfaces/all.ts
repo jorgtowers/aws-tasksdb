@@ -9,9 +9,9 @@ export interface iTask{
 // interfaces/iRate.ts
 export interface iRate {
     id?: string; // Si el ID es autogenerado, puede ser opcional
-    Description: string;
-    Vigency: string; // O Date si prefieres trabajar con objetos Date
-    Amount: number;
+    description: string;
+    vigency: string; // O Date si prefieres trabajar con objetos Date
+    amount: number;
 }
 
 // interfaces/iCustomer.ts

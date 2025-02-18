@@ -34,9 +34,9 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
     };
 
     const [rate, setRate] = useState<iRate>({ // Tipado del state con la interfaz iRate
-        Description: '',
-        Vigency: '',
-        Amount: 0 // Valor inicial para Amount
+        description: '',
+        vigency: '',
+        amount: 0 // Valor inicial para Amount
     });
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -88,9 +88,9 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
         const res = await fetch(`${K_API_PATH}/rates/${id}`); // Ruta correcta para rates
         const rate = await res.json();
         setRate({
-            Description: rate.Description,
-            Vigency: rate.Vigency,
-            Amount: rate.Amount
+            description: rate.description,
+            vigency: rate.vigency,
+            amount: rate.amount
         });
     };
 
@@ -116,7 +116,7 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
                         placeholder="Description" // Placeholder ajustado
                         margin="normal"
                         onChange={handleChange}
-                        value={rate.Description} // Valor del campo ajustado
+                        value={rate.description} // Valor del campo ajustado
                     />
 
                 </div>
@@ -128,7 +128,7 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
                         type="date" // Tipo de dato para la fecha
                         margin="normal"
                         onChange={handleChange}
-                        value={rate.Vigency} // Valor del campo ajustado
+                        value={rate.vigency} // Valor del campo ajustado
                     />
                 </div>
 
@@ -139,7 +139,7 @@ export default function NewRate() { // Nombre del componente cambiado a NewRate
                         type="number" // Tipo de dato numérico
                         margin="normal"
                         onChange={handleChange}
-                        value={rate.Amount} // Valor del campo ajustado
+                        value={rate.amount} // Valor del campo ajustado
                     />
                 </div>
 
