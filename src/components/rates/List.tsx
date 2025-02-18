@@ -17,9 +17,9 @@ export function RateList({ items }: Props) {
     const handerCardClick = (ix: any) => {
         let selected = items.findIndex(x => x.id == ix.toString());
         setSelectedCard(ix);
-        router.push(`<span class="math-inline">${K_PAGES_RATES_PATH}/edit/</span>${ix}`);
+        router.push(`${K_PAGES_RATES_PATH}/edit/${ix}`);
     }
-    
+
     return (
         <Box
             sx={{
