@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useRouter } from "next/router";
 
-import {iTask} from '../../interfaces/iTask';
+import {iTask} from '../../interfaces/all';
 
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';

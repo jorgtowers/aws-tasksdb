@@ -1,11 +1,11 @@
 import Image from "next/image";
 import styles from "@/app/page.module.css";
-import {iTask} from '@/interfaces/iTask';
+import {iTask} from '@/interfaces/all';
 import Button from '@mui/material/Button';
 import {K_API_PATH, K_PAGES_TASKS_PATH} from '@/utils/settings';
 //Para poder navegar entre pantallas useRouter
 import { useRouter } from "next/router";
-import { TaskList } from "@/components/tasks/TaskList";
+import { TaskList } from "@/components/tasks/List";
 import Navbar from "@/components/Navbar";
 
 interface Props{

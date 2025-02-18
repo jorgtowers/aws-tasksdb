@@ -1,5 +1,5 @@
 import React from 'react';
-import {iTask} from '../../interfaces/iTask';
+import {iTask} from '../../interfaces/all';
 import {Card,CardContent,CardActionArea,Typography, Box   } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import { useRouter } from "next/router";
