@@ -20,7 +20,7 @@ export function CustomerRateList({ items }: Props) {
     const handerCardClick = (ix: any) => {
         let selected = items.findIndex(x => x.id == ix.toString());
         setSelectedCard(ix);
-        router.push(`<span class="math-inline">\{K\_PAGES\_CUSTOMER\_RATES\_PATH\}/edit/</span>{ix}`);
+        router.push(`<span class="math-inline">${K_PAGES_CUSTOMER_RATES_PATH}/edit/</span>${ix}`);
     }
 
     return (
